@@ -3,8 +3,6 @@ package com.example.user_management.entity;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 
-import java.util.HashSet;
-import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -16,11 +14,9 @@ public class Authority implements GrantedAuthority {
 
     @Column(nullable = false, unique = true)
     private String name;
-//
-//    @ManyToMany(mappedBy = "authorities")
-//    private Set<Role> roles = new HashSet<>();
 
-    // Getters and Setters
+
+
     public UUID getId() {
         return id;
     }
@@ -36,14 +32,6 @@ public class Authority implements GrantedAuthority {
     public void setName(String name) {
         this.name = name;
     }
-
-//    public Set<Role> getRoles() {
-//        return roles;
-//    }
-//
-//    public void setRoles(Set<Role> roles) {
-//        this.roles = roles;
-//    }
 
     @Override
     public String getAuthority() {
